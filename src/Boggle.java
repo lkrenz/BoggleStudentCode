@@ -25,6 +25,7 @@ public class Boggle {
         return sol;
     }
 
+    // Uses depth first search to search through inputted 2D array
     public static String[] depthFirstSearch() {
         return null;
     }
