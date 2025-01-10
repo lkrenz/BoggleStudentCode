@@ -26,7 +26,20 @@ public class Boggle {
     }
 
     // Uses depth first search to search through inputted 2D array
-    public static String[] depthFirstSearch() {
+    public static String[] depthFirstSearch(char[][] board, Trie words, ) {
+        // Base cases are outside of bounds
+
+
+        // Place has been visited
+        // null value in the trie
+
+        // Set this value to visited (dash) and save the letter
+
+        // Recurse through the different options
+
+        // Set this character back to the original character
         return null;
     }
+
+    public static
 }
