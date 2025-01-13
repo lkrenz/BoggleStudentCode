@@ -47,7 +47,7 @@ public class Boggle {
         if (board[row][col] == '-') {
             return;
         }
-        place = place.getChild(board[row][col]);
+        place = place.checkChild(board[row][col]);
 
         // null value in the trie
         if (place == null) {
@@ -62,17 +62,16 @@ public class Boggle {
 
         // Check if there's a word
         if (place.isWord()) {
-            goodWords.add(path);
+            goodWords.add(newPath);
             place.removeWord();
         }
 
         // Recurse through the different options
-        depthFirstSearch(board, place, goodWords, row, col + 1, path);
-        depthFirstSearch(board, place, goodWords, row + 1, col, path);
-        depthFirstSearch(board, place, goodWords, row, col - 1, path);
-        depthFirstSearch(board, place, goodWords, row - 1, col, path);
+        depthFirstSearch(board, place, goodWords, row, col + 1, newPath);
+        depthFirstSearch(board, place, goodWords, row + 1, col, newPath);
+        depthFirstSearch(board, place, goodWords, row, col - 1, newPath);
+        depthFirstSearch(board, place, goodWords, row - 1, col, newPath);
         // Set this character back to the original character
         board[row][col] = letter;
-
     }
 }
